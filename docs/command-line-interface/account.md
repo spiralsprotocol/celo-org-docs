@@ -274,6 +274,63 @@ EXAMPLE
 
 _See code: [src/commands/account/claim-storage.ts](https://github.com/celo-org/celo-monorepo/tree/master/packages/cli/src/commands/account/claim-storage.ts)_
 
+## celocli account:delete-payment-delegation
+
+Remove a validator's payment delegation by setting benficiary and fraction to 0.
+
+```text
+
+Remove a validator's payment delegation by setting benficiary and fraction to 0.
+
+USAGE
+  $ celocli account:delete-payment-delegation --account ADDRESS 
+
+OPTIONS
+  --account             (required) the validator account address to delete beneficiary and fraction
+```
+
+_See code: [src/commands/account/delete-payment-delegation.ts](https://github.com/spiralsprotocol/celo-monorepo/blob/spirals/expose-payment-delegation-in-cli/packages/cli/src/commands/account/set-payment-delegation.ts)_
+
+## celocli account:get-payment-delegation
+
+Get a validator's payment delegation settings.
+
+```text
+
+Get a validator's payment delegation settings.
+
+USAGE
+  $ celocli account:get-payment-delegation --account ADDRESS
+
+OPTIONS
+  --account             (required) the validator account address to look up 
+
+RETURN
+  beneficiary           address of the beneficiary account
+  fraction              fraction of payment delegated
+```
+
+_See code: [src/commands/account/get-payment-delegation.ts](https://github.com/spiralsprotocol/celo-monorepo/blob/spirals/expose-payment-delegation-in-cli/packages/cli/src/commands/account/get-payment-delegation.ts)_
+
+## celocli account:set-payment-delegation
+
+Set a validator's payment delegation beneficiary and fraction.
+
+```text
+
+Set a validator's payment delegation settings.
+
+USAGE
+  $ celocli account:set-payment-delegation --beneficiary ADDRESS --fraction FRACTION
+
+OPTIONS
+  --beneficiary             (required) the address that should receive a portion of validator payments
+  --fraction                (required) the fraction of the validator's payment sent to the `beneficiary`
+                            address each epoch, given as FixidityLib value, not greater than 1
+```
+
+_See code: [src/commands/account/set-payment-delegation.ts](https://github.com/spiralsprotocol/celo-monorepo/blob/spirals/expose-payment-delegation-in-cli/packages/cli/src/commands/account/set-payment-delegation.ts)_
+
 ## `celocli account:create-metadata FILE`
 
 Create an empty identity metadata file. Use this metadata file to store claims attesting to ownership of off-chain resources. Claims can be generated with the account:claim-\* commands.

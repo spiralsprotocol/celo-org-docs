@@ -674,6 +674,11 @@ const sidebars = {
                 },
                 {
                   type: "doc",
+                  label: "Validator Rewards Beneficiary",
+                  id: "celo-codebase/protocol/proof-of-stake/validator-rewards-beneficiary",
+                },
+                {
+                  type: "doc",
                   label: "Locked CELO Rewards",
                   id:
                     "celo-codebase/protocol/proof-of-stake/locked-gold-rewards",
